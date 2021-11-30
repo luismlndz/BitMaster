@@ -1,6 +1,7 @@
 import * as C from './GameStyling';
 import { useEffect, useState } from 'react';
 import { Character } from '../../components/Character/Character';
+import { Question } from '../../components/Question/Question';
 import { useCharacter } from '../../hooks/useCharacter';
 
 export default function Game() {
@@ -39,6 +40,7 @@ export default function Game() {
                 name = {character.username} 
                 />
             </C.Map>
+            <Question />
         </C.Container>
     );
 }
