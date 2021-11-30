@@ -48,7 +48,7 @@ export const optionsContainer = styled.div`
     border-radius: 1rem;
     margin: 1rem 0rem;
 `
-export const option = styled.div`
+export const option = styled.button`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -57,6 +57,7 @@ export const option = styled.div`
     width: 40%;
     height: 50px;
     background-color: white;
+    border: none;
     border-radius: 1rem;
     margin: 1rem;
 
@@ -71,4 +72,17 @@ export const loading = styled.div`
     font-size: 2rem;
     text-align: center;
     margin: 60% 0rem;
+`
+
+export const correct = styled.div`
+    color: green;
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 1rem;
+`
+export const incorrect = styled.div`
+    color: red;
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 1rem;
 `
