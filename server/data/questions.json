@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "question": "What is the output of the following program?",
+        "block": "const add = (a,b) => {return a + b;} console.log(add(5,3));",
+        "options": ["2","8","15","undefined"],
+        "difficulty": "easy",
+        "answer": "8"
+    },
+    {
+        "id": 1,
+        "question": "What is the output of the following program?",
+        "block": "const add = (a,b) => {return a + b;} console.log(add(5,3));",
+        "options": ["2","8","15","undefined"],
+        "difficulty": "medium",
+        "answer": "8"
+    },
+    {
+        "id": 1,
+        "question": "What is the output of the following program?",
+        "block": "const add = (a,b) => {return a + b;} console.log(add(5,3));",
+        "options": ["2","8","15","undefined"],
+        "difficulty": "hard",
+        "answer": "8"
+    },
+    {
+        "id": 1,
+        "question": "Easy 2",
+        "block": "const add = (a,b) => {return a + b;} console.log(add(5,3));",
+        "options": ["2","8","15","undefined"],
+        "difficulty": "easy",
+        "answer": "8"
+    },
+    {
+        "id": 1,
+        "question": "Easy 3",
+        "block": "const add = (a,b) => {return a + b;} console.log(add(5,3));",
+        "options": ["2","8","15","undefined"],
+        "difficulty": "easy",
+        "answer": "8"
+    }
+]

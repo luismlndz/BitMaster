@@ -63,6 +63,9 @@ export const option = styled.button`
 
     :hover {
         cursor: pointer;
+        background-color: #1F6FEB;
+        transition: 0.5s;
+        color: white;
     }
 
 `
@@ -73,16 +76,42 @@ export const loading = styled.div`
     text-align: center;
     margin: 60% 0rem;
 `
+export const nextContainer = styled.div`
+    align-self: center;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #21262D;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    width: 90%;
+    height: 50px;
+`
 
 export const correct = styled.div`
-    color: green;
+    color: limegreen;
     text-align: center;
     font-size: 2rem;
-    margin-top: 1rem;
 `
 export const incorrect = styled.div`
     color: red;
     text-align: center;
     font-size: 2rem;
-    margin-top: 1rem;
+`
+export const continueButton = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    background-color: white;
+    width: 35%;
+    height: 50%;
+    border-radius: 1rem;
+
+    :hover {
+        cursor: pointer;
+        background-color: #1F6FEB;
+        transition: 0.5s;
+        color: white;
+    }
 `

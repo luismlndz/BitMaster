@@ -4,7 +4,7 @@ import { mapSpots } from "../maps/maps";
 
 export const useCharacter = (prop: string) => {
     const [username, setUsername] = useState(prop);
-    const [position, setPosition] = useState({x: mapSpots.length, y: mapSpots.length/2});
+    const [position, setPosition] = useState({x: mapSpots.length/2, y: mapSpots.length/2});
     const [side, setSide] = useState<CharacterSides>('down');
 
     const moveLeft = () => {

@@ -21,7 +21,6 @@ export default function Game() {
         if(score >= 600) {
             setDifficulty('Hard');
         }
-        console.log('useEffect');
     }, [score]);
 
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -64,7 +63,7 @@ export default function Game() {
                     <C.difficulty>Difficulty: {difficulty}</C.difficulty>
                 </C.textContainer>
             </C.mapContainer>
-            <Question addScore={addScore}/>
+            <Question addScore={addScore} difficulty={difficulty}/>
         </C.container>
     );
 }

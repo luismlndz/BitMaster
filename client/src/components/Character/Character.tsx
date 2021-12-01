@@ -9,12 +9,12 @@ type Props = {
 }
 
 export const Character = ({x, y, side, name}: Props) => {
-    const size = 30;
+    const size = 60;
     const sides = {
         down: 0,
-        left: -30,
-        right: -60,
-        up: -90
+        left: -60,
+        right: -120,
+        up: -180
     }
 
     return (
