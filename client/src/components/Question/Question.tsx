@@ -6,17 +6,18 @@ import { Guide } from '../Guide/Guide';
 interface props {
     addScore(arg: boolean): void;
     difficulty: string;
+    language: string;
     trigger: boolean;
 }
 
-export const Question = ({addScore, difficulty, trigger}: props) => {
+export const Question = ({addScore, difficulty, language, trigger}: props) => {
     const [question, setQuestion] = useState<null | {id: number, question: string, block: string,options: Array<string>, answer: string}>(null);
     const [isCorrect, setIsCorrect] = useState<null | boolean>();
     const [loading, setLoading] = useState<boolean>(true);
 
     useEffect(() => {
         if(trigger) {
-            axios.get(`http://localhost:8080/questions/${difficulty}`)
+            axios.get(`http://localhost:8080/questions/${language}/${difficulty}`)
             .then((response) => {
                 setQuestion(response.data);
                 setLoading(false);
@@ -30,7 +31,6 @@ export const Question = ({addScore, difficulty, trigger}: props) => {
     const checkAnswer = (option: string) => {
         if(option === question?.answer) {
             setIsCorrect(true);
-            addScore(true);
         }
         else {
             setIsCorrect(false);
@@ -41,6 +41,8 @@ export const Question = ({addScore, difficulty, trigger}: props) => {
     }
 
     const handleContinue = () => {
+        addScore(true);
+        
         window.dispatchEvent(new KeyboardEvent('keydown', {
             key: "s",
             keyCode: 83,

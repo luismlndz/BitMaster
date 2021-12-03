@@ -1,7 +1,6 @@
 import * as C from './MapStyling';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { Character } from '../Character/Character';
-import { useCharacter } from '../../hooks/useCharacter';
 import { CharacterSides } from "../Character/CharacterSides";
 
 type props = {

@@ -6,6 +6,7 @@ import { useCharacter } from '../../hooks/useCharacter';
 import { Leaderboard } from '../../components/Leaderboard/Leaderbaord';
 import { UploadScore } from '../../components/UploadScore/UploadScore';
 import { Map } from '../../components/Map/Map';
+import Select, { SingleValue } from 'react-select';
 
 export default function Game() {
     const [start, setStart] = useState<boolean>(false);
@@ -13,7 +14,19 @@ export default function Game() {
     const [score, setScore] = useState<number>(0);
     const [uploadScore, setUploadScore] = useState<boolean>(false);
     const [difficulty, setDifficulty] = useState<string>('Easy');
+    const [language, setLanguage] = useState<string>('JavaScript');
     const character = useCharacter();
+
+    const languageOptions = [
+        { value: 'JavaScript', label: 'JavaScript' },
+        { value: 'Java', label: 'Java' },
+        { value: 'Python', label: 'Python' },
+        { value: 'C', label: 'C' }
+    ]
+
+    const selectLanguage = (selected: SingleValue<{ value: string , label: string }>) => {
+        setLanguage(selected!.value);
+    }
 
     useEffect(() => {
         if(start) {
@@ -46,6 +59,10 @@ export default function Game() {
                         <Map difficulty={difficulty} character={character}/>
                         <C.textContainer>
                             <C.score>Score: {score}</C.score>
+                            <Select 
+                                options={languageOptions} 
+                                onChange={selectLanguage}
+                                placeholder='JavaScript'/>
                             <C.difficulty>Difficulty: {difficulty}</C.difficulty>
                         </C.textContainer>
                     </>
@@ -81,7 +98,7 @@ export default function Game() {
                 }
             </C.mapContainer>
             {start ?
-                <Question addScore={addScore} difficulty={difficulty} trigger={character.trigger}/>
+                <Question addScore={addScore} difficulty={difficulty} language={language} trigger={character.trigger}/>
                 :
                 <>
                     {(over || uploadScore) ?
