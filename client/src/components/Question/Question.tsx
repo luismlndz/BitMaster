@@ -1,27 +1,31 @@
 import * as C from './QuestionStyling';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Guide } from '../Guide/Guide';
 
 interface props {
-    addScore(arg: Boolean): void;
+    addScore(arg: boolean): void;
     difficulty: string;
+    trigger: boolean;
 }
 
-export const Question = ({addScore, difficulty}: props) => {
+export const Question = ({addScore, difficulty, trigger}: props) => {
     const [question, setQuestion] = useState<null | {id: number, question: string, block: string,options: Array<string>, answer: string}>(null);
-    const [isCorrect, setIsCorrect] = useState<null | Boolean>();
-    const [loading, setLoading] = useState<Boolean>(true);
+    const [isCorrect, setIsCorrect] = useState<null | boolean>();
+    const [loading, setLoading] = useState<boolean>(true);
 
     useEffect(() => {
-        axios.get(`http://localhost:8080/questions/${difficulty}`)
-        .then((response) => {
-            setQuestion(response.data);
-            setLoading(false);
-        })
-        .catch((err) => {
-            console.log(err);
-        });
-    }, [difficulty]);
+        if(trigger) {
+            axios.get(`http://localhost:8080/questions/${difficulty}`)
+            .then((response) => {
+                setQuestion(response.data);
+                setLoading(false);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+        }
+    }, [difficulty, trigger]);
 
     const checkAnswer = (option: string) => {
         console.log("clicked");
@@ -29,21 +33,21 @@ export const Question = ({addScore, difficulty}: props) => {
             setIsCorrect(true);
             addScore(true);
         }
-        else
+        else {
             setIsCorrect(false);
+            addScore(false);
+        }
         
         disableButtons();
     }
 
     const handleContinue = () => {
-        axios.get(`http://localhost:8080/questions/${difficulty}`)
-        .then((response) => {
-            setQuestion(response.data);
-            setLoading(false);
-        })
-        .catch((err) => {
-            console.log(err);
-        });
+        window.dispatchEvent(new KeyboardEvent('keydown', {
+            key: "s",
+            keyCode: 83,
+            code: "KeyS",
+            which: 83
+        }));
 
         enableButtons();
         setIsCorrect(null);
@@ -69,31 +73,37 @@ export const Question = ({addScore, difficulty}: props) => {
 
     return (
         <C.container>
-            {loading ? <C.loading>Loading...</C.loading> : 
+            {trigger ?
                 <>
-                    <C.question>
-                        <h1>{question!.question}</h1>
-                    </C.question>
-                    <C.block>
-                        <p>{question!.block}</p>
-                    </C.block>
-                    <C.optionsContainer>
-                        {question!.options.map((option, index) => (
-                            <C.option key={index} onClick={() => {checkAnswer(option)}}>{option}</C.option>
-                        ))}
-                    </C.optionsContainer>
-                    {isCorrect === true ? 
-                        <C.nextContainer>
-                            <C.correct>Correct!</C.correct>
-                            <C.continueButton onClick={handleContinue} >Continue</C.continueButton>
-                        </C.nextContainer> 
-                    : ((isCorrect === false) ? 
-                        <C.nextContainer>
-                            <C.incorrect>Incorrect!</C.incorrect> 
-                        </C.nextContainer>
-                        : '')
-                    }
+                {loading ? <C.loading>Loading...</C.loading> : 
+                    <>
+                        <C.question>
+                            <h1>{question!.question}</h1>
+                        </C.question>
+                        <C.block>
+                            <p>{question!.block}</p>
+                        </C.block>
+                        <C.optionsContainer>
+                            {question!.options.map((option, index) => (
+                                <C.option key={index} onClick={() => {checkAnswer(option)}}>{option}</C.option>
+                            ))}
+                        </C.optionsContainer>
+                        {isCorrect === true ? 
+                            <C.nextContainer>
+                                <C.correct>Correct!</C.correct>
+                                <C.continueButton onClick={handleContinue} >Continue</C.continueButton>
+                            </C.nextContainer> 
+                        : ((isCorrect === false) ? 
+                            <C.nextContainer>
+                                <C.incorrect>Incorrect!</C.incorrect> 
+                            </C.nextContainer>
+                            : null)
+                        }
+                    </>
+                }
                 </>
+                :
+                <Guide/>
             }
         </C.container>
     );

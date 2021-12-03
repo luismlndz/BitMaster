@@ -1,9 +1,0 @@
-[
-    {
-        "id": 1,
-        "question": "What is the output of the following program?",
-        "block": "const add = (a,b) => {return a + b;} console.log(add(5,3));",
-        "options": ["2","8","15","undefined"],
-        "answer": "8"
-    }
-]

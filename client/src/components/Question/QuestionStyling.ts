@@ -67,7 +67,6 @@ export const option = styled.button`
         transition: 0.5s;
         color: white;
     }
-
 `
 
 export const loading = styled.div`

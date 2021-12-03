@@ -1,11 +1,11 @@
 import { CharacterSides } from "../components/Character/CharacterSides";
 import { useState } from "react"
-import { mapSpots } from "../maps/maps";
+import { map } from "../maps/maps";
 
-export const useCharacter = (prop: string) => {
-    const [username, setUsername] = useState(prop);
-    const [position, setPosition] = useState({x: mapSpots.length/2, y: mapSpots.length/2});
+export const useCharacter = () => {
+    const [position, setPosition] = useState({x: 7, y: 6});
     const [side, setSide] = useState<CharacterSides>('down');
+    const [trigger, setTrigger] = useState<boolean>(false);
 
     const moveLeft = () => {
         setPosition((position) => ({
@@ -40,16 +40,22 @@ export const useCharacter = (prop: string) => {
     }
 
     const canMove = (x: number, y: number) => {
-        if(mapSpots[y] !== undefined && mapSpots[y][x] !== undefined) {
-            if(mapSpots[y][x] === 1) {
+        if(map[y] !== undefined && map[y][x] !== undefined) {
+            if(map[y][x] === 1) {
+                setTrigger(false);
                 return true;
             }
+            else if(map[y][x] === 2) {
+                setTrigger(true);
+                return false;
+            }
         }
+        setTrigger(false);
         return false;
     }
 
     return {
-        username,
+        trigger,
         x: position.x,
         y: position.y,
         side,

@@ -1,0 +1,24 @@
+import styled from "styled-components"
+
+export const container = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+    height: 80vh;
+    background-color: #484f58;
+    border-radius: 1rem;
+    border: 1px solid #21262D;
+    overflow: hidden;
+`
+export const title = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #f0f6fc;
+    padding-bottom: 1rem;
+    width: 100%;
+    height: 15vh;
+    background-color: #484f58;
+    border-bottom: 5px solid #21262D;
+`

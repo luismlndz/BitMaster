@@ -5,10 +5,9 @@ type Props = {
     x: number;
     y: number;
     side: CharacterSides;
-    name: string;
 }
 
-export const Character = ({x, y, side, name}: Props) => {
+export const Character = ({x, y, side}: Props) => {
     const size = 60;
     const sides = {
         down: 0,
@@ -18,12 +17,11 @@ export const Character = ({x, y, side, name}: Props) => {
     }
 
     return (
-        <C.character className= 'character'
+        <C.character
             size = {size}
             left = {x * size}
             top = {y * size}
             sidePosition = {sides[side] ?? 0}
-        >
-        </C.character>
+        />
     );
 }
