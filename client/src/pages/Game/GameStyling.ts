@@ -85,6 +85,7 @@ export const difficulty = styled.div`
 
 export const gameOver = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 770px;
@@ -100,7 +101,7 @@ export const gameOver = styled.div`
   border: 1px solid #21262D;
 `
 
-export const playAgain = styled.div`
+export const button = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;

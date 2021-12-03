@@ -28,7 +28,6 @@ export const Question = ({addScore, difficulty, trigger}: props) => {
     }, [difficulty, trigger]);
 
     const checkAnswer = (option: string) => {
-        console.log("clicked");
         if(option === question?.answer) {
             setIsCorrect(true);
             addScore(true);
