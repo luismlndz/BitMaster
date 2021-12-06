@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const container = styled.div`
   display: flex;
@@ -7,6 +7,7 @@ export const container = styled.div`
   background-color: #21262D;
   width: 100vw;
   height: 100vh;
+  padding-bottom: 10rem;
 `
 
 export const mapContainer = styled.div`
@@ -21,7 +22,7 @@ export const startMenu = styled.div`
   width: 770px;
   height: 510px;
   border-radius: 1rem;
-  // background-image: url('/assets/map.png');
+  background-image: url('/assets/start.gif');
   background-color: #484f58;
   background-position: left top;
   background-size: 100%;
@@ -36,13 +37,13 @@ export const startButton = styled.div`
   align-items: center;
   justify-content: center;
   font-size: 1rem;
-  color: black;
+  color: white;
   width: 40%;
   height: 50px;
-  background-color: white;
+  background-color: #21262D;
   border: none;
   border-radius: 1rem;
-  margin: 1rem;
+  margin-left: 18rem;
 
   :hover {
     cursor: pointer;
@@ -57,7 +58,6 @@ export const map = styled.div<{difficulty: string}>`
   height: 510px;
   border-radius: 1rem;
   background-image: url('/assets/${props => props.difficulty}.png');
-  //background-color: #484f58;
   background-position: left top;
   background-size: 100%;
   margin: 1rem;
@@ -68,19 +68,37 @@ export const map = styled.div<{difficulty: string}>`
 
 export const textContainer = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 770px;
+  height: 50px;
+  margin-left: 1rem;
 `
 
 export const score = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: white;
-  font-size: 1.5rem;
-  margin-left: 2rem;
+  margin-right: 5.5rem;
+  font-size: 1.25rem;
+  background-color: #484f58;
+  border-radius: 1rem;
+  height: 100%;
+  width: 30%;
 `
 
 export const difficulty = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: white;
-  font-size: 1.5rem;
-  margin-right: 2.5rem;
+  font-size: 1.25rem;
+  margin-left: 5.5rem;
+  background-color: #484f58;
+  border-radius: 1rem;
+  height: 100%;
+  padding: 0rem 2rem;
 `
 
 export const gameOver = styled.div`

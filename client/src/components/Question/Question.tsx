@@ -2,6 +2,8 @@ import * as C from './QuestionStyling';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Guide } from '../Guide/Guide';
+import { CodeBlock, dracula } from 'react-code-blocks';
+
 
 interface props {
     addScore(arg: boolean): void;
@@ -82,7 +84,12 @@ export const Question = ({addScore, difficulty, language, trigger}: props) => {
                             <h1>{question!.question}</h1>
                         </C.question>
                         <C.block>
-                            <p>{question!.block}</p>
+                            <CodeBlock
+                                language={language}
+                                showLineNumbers={true}
+                                text={question!.block}
+                                theme={dracula}
+                            />
                         </C.block>
                         <C.optionsContainer>
                             {question!.options.map((option, index) => (
@@ -92,7 +99,7 @@ export const Question = ({addScore, difficulty, language, trigger}: props) => {
                         {isCorrect === true ? 
                             <C.nextContainer>
                                 <C.correct>Correct!</C.correct>
-                                <C.continueButton onClick={handleContinue} >Continue</C.continueButton>
+                                <C.continueButton onClick={handleContinue}>Continue</C.continueButton>
                             </C.nextContainer> 
                         : ((isCorrect === false) ? 
                             <C.nextContainer>

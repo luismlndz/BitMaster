@@ -2,7 +2,7 @@
     {
         "language": "JavaScript",
         "question": "What is the output of the following program?",
-        "block": "const add = (a,b) => {return a + b;} console.log(add(5,3));",
+        "block": "const add = (a,b) => {\n\treturn a + b;\n}\n console.log(add(5,3));",
         "options": ["2","8","15","undefined"],
         "difficulty": "easy",
         "answer": "8"

@@ -30,7 +30,6 @@ export const block = styled.div`
     font-size: 1rem;
     color: #f0f6fc;
     width: 90%;
-    height: 15vh;
     background-color: #21262D;
     border-radius: 1rem;
     margin-top: 2rem;

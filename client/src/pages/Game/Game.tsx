@@ -62,7 +62,8 @@ export default function Game() {
                             <Select 
                                 options={languageOptions} 
                                 onChange={selectLanguage}
-                                placeholder='JavaScript'/>
+                                placeholder='JavaScript'
+                            />
                             <C.difficulty>Difficulty: {difficulty}</C.difficulty>
                         </C.textContainer>
                     </>
