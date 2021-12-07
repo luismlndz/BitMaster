@@ -44,6 +44,7 @@ export const startButton = styled.div`
   border: none;
   border-radius: 1rem;
   margin-left: 18rem;
+  margin-top: 6rem;
 
   :hover {
     cursor: pointer;

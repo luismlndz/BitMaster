@@ -41,13 +41,13 @@ export const UploadScore = ({ score }: props) => {
                 </>
                 :
                 <>
-                    <form onSubmit={handleSubmit}>
-                        <h1>{`Your score: ${score}`}</h1>
-                        <h1>Enter your username</h1>
-                        <input name='username' placeholder='Username'/>
-                        <button type='submit'>Submit</button>
-                    </form>
-                    <button onClick={() => {window.location.reload()}}>Cancel and Play Again</button>
+                    <C.text><h1>{`Your score: ${score}`}</h1></C.text>
+                    <C.text><h1>Enter your username</h1></C.text>
+                    <C.form onSubmit={handleSubmit}>
+                        <C.input name='username' placeholder='Username'/>
+                        <C.button type='submit'>Submit</C.button>
+                    </C.form>
+                    <C.button onClick={() => {window.location.reload()}}>Cancel and Play Again</C.button>
                 </>
 
             }

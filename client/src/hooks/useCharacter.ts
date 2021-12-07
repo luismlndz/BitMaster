@@ -9,7 +9,7 @@ export const useCharacter = () => {
 
     const moveLeft = () => {
         setPosition((position) => ({
-            x: canMove(position.x - 1, position.y) ? position.x - 1 : position.x,
+            x: checkMove(position.x - 1, position.y) ? position.x - 1 : position.x,
             y: position.y
         }));
         setSide('left');
@@ -17,7 +17,7 @@ export const useCharacter = () => {
 
     const moveRight = () => {
         setPosition((position) => ({
-            x: canMove(position.x + 1, position.y) ? position.x + 1 : position.x,
+            x: checkMove(position.x + 1, position.y) ? position.x + 1 : position.x,
             y: position.y
         }));
         setSide('right');
@@ -26,7 +26,7 @@ export const useCharacter = () => {
     const moveUp = () => {
         setPosition((position) => ({
             x: position.x,
-            y: canMove(position.x, position.y - 1) ? position.y - 1 : position.y
+            y: checkMove(position.x, position.y - 1) ? position.y - 1 : position.y
         }));
         setSide('up')
     }
@@ -34,12 +34,12 @@ export const useCharacter = () => {
     const moveDown = () => {
         setPosition((position) => ({
             x: position.x,
-            y: canMove(position.x, position.y + 1) ? position.y + 1 : position.y
+            y: checkMove(position.x, position.y + 1) ? position.y + 1 : position.y
         }));
         setSide('down')
     }
 
-    const canMove = (x: number, y: number) => {
+    const checkMove = (x: number, y: number) => {
         if(map[y] !== undefined && map[y][x] !== undefined) {
             if(map[y][x] === 1) {
                 setTrigger(false);
