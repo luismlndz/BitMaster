@@ -28,7 +28,7 @@ export const startMenu = styled.div`
   background-size: 100%;
   margin: 1rem;
   margin-right: 1.5rem;
-  margin-top: 3rem;
+  margin-top: -2rem;
   border: 1px solid #21262D;
 `
 
@@ -52,19 +52,6 @@ export const startButton = styled.div`
     transition: 0.5s;
     color: white;
   }
-`
-
-export const map = styled.div<{difficulty: string}>`
-  width: 770px;
-  height: 510px;
-  border-radius: 1rem;
-  background-image: url('/assets/${props => props.difficulty}.png');
-  background-position: left top;
-  background-size: 100%;
-  margin: 1rem;
-  margin-right: 1.5rem;
-  margin-top: 3rem;
-  border: 1px solid #21262D;
 `
 
 export const textContainer = styled.div`
@@ -116,7 +103,7 @@ export const gameOver = styled.div`
   background-size: 100%;
   margin: 1rem;
   margin-right: 1.5rem;
-  margin-top: 3rem;
+  margin-top: -2rem;
   border: 1px solid #21262D;
 `
 

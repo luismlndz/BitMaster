@@ -9,6 +9,6 @@ export const map = styled.div<{difficulty: string}>`
   background-size: 100%;
   margin: 1rem;
   margin-right: 1.5rem;
-  margin-top: 3.75rem;
+  margin-top: -2rem;
   border: 1px solid #21262D;
 `

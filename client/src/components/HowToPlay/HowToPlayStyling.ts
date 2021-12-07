@@ -7,7 +7,7 @@ export const container = styled.div`
     height: 80vh;
     background-color: #484f58;
     border-radius: 1rem;
-    margin-top: 3rem;
+    margin-top: -2rem;
     border: 1px solid #21262D;
     overflow: hidden;
 `

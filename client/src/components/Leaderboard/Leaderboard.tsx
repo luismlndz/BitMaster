@@ -2,6 +2,10 @@ import * as C from './LeaderboardStyling';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
+type props = {
+    
+}
+
 export const Leaderboard = () => {
     const [leaderboard, setLeaderboard] = useState<null | [{username: string, score: string}]>(null);
 

@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { Question } from '../../components/Question/Question';
 import { HowToPlay } from '../../components/HowToPlay/HowToPlay';
 import { useCharacter } from '../../hooks/useCharacter';
-import { Leaderboard } from '../../components/Leaderboard/Leaderbaord';
+import { Leaderboard } from '../../components/Leaderboard/Leaderboard';
 import { UploadScore } from '../../components/UploadScore/UploadScore';
 import { Map } from '../../components/Map/Map';
 import Select, { SingleValue } from 'react-select';

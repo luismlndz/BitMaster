@@ -9,7 +9,7 @@ export const container = styled.div`
     border-radius: 1rem;
     border: 1px solid #21262D;
     overflow: hidden;
-    margin-top: 3rem;
+    margin-top: -2rem;
 `
 
 export const title = styled.div`

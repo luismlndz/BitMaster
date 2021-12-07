@@ -10,7 +10,7 @@
     {
         "language": "JavaScript",
         "question": "What is the return value of the following function?",
-        "block": "function compare() {\n\tlet num = 2;\n\tlet b = 2;\n\tif(a==b)\n\t\treturn true;\n\telse\n\t\treturn false;\n}",
+        "block": "function compare() {\n\tlet a = 2;\n\tlet b = 2;\n\tif(a==b)\n\t\treturn true;\n\telse\n\t\treturn false;\n}",
         "options": ["false","true","null","undefined"],
         "difficulty": "easy",
         "answer": "true"
