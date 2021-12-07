@@ -29,7 +29,11 @@ router.get('/JavaScript/easy', (_req, res) => {
         return question.difficulty === 'easy' && question.language === 'JavaScript';
     })
     const random = Math.floor(Math.random() * easy.length);
-    res.json(easy[random]);
+    const randomQuestion = easy[random];
+    questionsData = questionsData.filter((question) => {
+        return question !== randomQuestion
+    })
+    res.json(randomQuestion);
 })
 
 //Retrive a random medium Javascript question
@@ -38,7 +42,11 @@ router.get('/JavaScript/medium', (_req, res) => {
         return question.difficulty === 'medium' && question.language === 'JavaScript';
     })
     const random = Math.floor(Math.random() * medium.length);
-    res.json(medium[random]);
+    const randomQuestion = medium[random];
+    questionsData = questionsData.filter((question) => {
+        return question !== randomQuestion
+    })
+    res.json(randomQuestion);
 })
 
 //Retrive a random hard Javascript question
@@ -56,7 +64,11 @@ router.get('/Java/easy', (_req, res) => {
         return question.difficulty === 'easy' && question.language === 'Java';
     })
     const random = Math.floor(Math.random() * easy.length);
-    res.json(easy[random]);
+    const randomQuestion = easy[random];
+    questionsData = questionsData.filter((question) => {
+        return question !== randomQuestion
+    })
+    res.json(randomQuestion);
 })
 
 //Retrive a random medium Java question
@@ -65,7 +77,11 @@ router.get('/Java/medium', (_req, res) => {
         return question.difficulty === 'medium' && question.language === 'Java';
     })
     const random = Math.floor(Math.random() * medium.length);
-    res.json(medium[random]);
+    const randomQuestion = medium[random];
+    questionsData = questionsData.filter((question) => {
+        return question !== randomQuestion
+    })
+    res.json(randomQuestion);
 })
 
 //Retrive a random hard Java question
@@ -83,7 +99,11 @@ router.get('/Python/easy', (_req, res) => {
         return question.difficulty === 'easy' && question.language === 'Python';
     })
     const random = Math.floor(Math.random() * easy.length);
-    res.json(easy[random]);
+    const randomQuestion = easy[random];
+    questionsData = questionsData.filter((question) => {
+        return question !== randomQuestion
+    })
+    res.json(randomQuestion);
 })
 
 //Retrive a random medium Python question
@@ -92,7 +112,11 @@ router.get('/Python/medium', (_req, res) => {
         return question.difficulty === 'medium' && question.language === 'Python';
     })
     const random = Math.floor(Math.random() * medium.length);
-    res.json(medium[random]);
+    const randomQuestion = medium[random];
+    questionsData = questionsData.filter((question) => {
+        return question !== randomQuestion
+    })
+    res.json(randomQuestion);
 })
 
 //Retrive a random hard Python question
@@ -104,28 +128,36 @@ router.get('/Python/hard', (_req, res) => {
     res.json(hard[random]);
 })
 
-//Retrive a random easy C++ question
+//Retrive a random easy C question
 router.get('/C/easy', (_req, res) => {
     const easy = questionsData.filter((question) => {
-        return question.difficulty === 'easy' && question.language === 'C++';
+        return question.difficulty === 'easy' && question.language === 'C';
     })
     const random = Math.floor(Math.random() * easy.length);
-    res.json(easy[random]);
+    const randomQuestion = easy[random];
+    questionsData = questionsData.filter((question) => {
+        return question !== randomQuestion
+    })
+    res.json(randomQuestion);
 })
 
-//Retrive a random medium C++ question
+//Retrive a random medium C question
 router.get('/C/medium', (_req, res) => {
     const medium = questionsData.filter((question) => {
-        return question.difficulty === 'medium' && question.language === 'C++';
+        return question.difficulty === 'medium' && question.language === 'C';
     })
     const random = Math.floor(Math.random() * medium.length);
-    res.json(medium[random]);
+    const randomQuestion = medium[random];
+    questionsData = questionsData.filter((question) => {
+        return question !== randomQuestion
+    })
+    res.json(randomQuestion);
 })
 
-//Retrive a random hard C++ question
+//Retrive a random hard C question
 router.get('/C/hard', (_req, res) => {
     const hard = questionsData.filter((question) => {
-        return question.difficulty === 'hard' && question.language === 'C++';
+        return question.difficulty === 'hard' && question.language === 'C';
     })
     const random = Math.floor(Math.random() * hard.length);
     res.json(hard[random]);

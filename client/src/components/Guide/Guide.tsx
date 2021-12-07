@@ -4,7 +4,8 @@ export const Guide = () => {
 
     return (
         <C.container>
-            <C.title>Walk up to a question station</C.title>
+            <C.title/>
+            <C.guide/>
         </C.container>
     );
 }

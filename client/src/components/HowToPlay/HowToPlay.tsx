@@ -4,7 +4,8 @@ export const HowToPlay = () => {
 
     return (
         <C.container>
-            <C.title>How To Play</C.title>
+            <C.title/>
+            <C.howto/>
         </C.container>
     );
 }

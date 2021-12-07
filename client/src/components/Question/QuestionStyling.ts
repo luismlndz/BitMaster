@@ -5,6 +5,7 @@ export const container = styled.div`
     flex-direction: column;
     width: 30vw;
     height: 80vh;
+    margin-top: 3rem;
     background-color: #484f58;
     border-radius: 1rem;
     border: 1px solid #21262D;
@@ -25,15 +26,16 @@ export const block = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    text-align: center;
     align-self: center;
     font-size: 1rem;
     color: #f0f6fc;
     width: 90%;
+    height: 20vh;
     background-color: #21262D;
     border-radius: 1rem;
     margin-top: 2rem;
 `
+
 export const optionsContainer = styled.div`
     display: flex;
     justify-content: center;
@@ -42,11 +44,12 @@ export const optionsContainer = styled.div`
     align-self: center;
     color: #f0f6fc;
     width: 90%;
-    height: 25vh;
+    height: 20vh;
     background-color: #21262D;
     border-radius: 1rem;
     margin: 1rem 0rem;
 `
+
 export const option = styled.button`
     display: flex;
     align-items: center;
@@ -58,7 +61,7 @@ export const option = styled.button`
     background-color: white;
     border: none;
     border-radius: 1rem;
-    margin: 1rem;
+    margin: 0.5rem;
 
     :hover {
         cursor: pointer;
@@ -74,6 +77,7 @@ export const loading = styled.div`
     text-align: center;
     margin: 60% 0rem;
 `
+
 export const nextContainer = styled.div`
     align-self: center;
     display: flex;
@@ -91,11 +95,13 @@ export const correct = styled.div`
     text-align: center;
     font-size: 2rem;
 `
+
 export const incorrect = styled.div`
     color: red;
     text-align: center;
     font-size: 2rem;
 `
+
 export const continueButton = styled.div`
     display: flex;
     justify-content: center;

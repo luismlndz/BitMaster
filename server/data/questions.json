@@ -9,34 +9,274 @@
     },
     {
         "language": "JavaScript",
-        "question": "What is the output of the following program?",
-        "block": "const add = (a,b) => {return a + b;} console.log(add(5,3));",
-        "options": ["2","8","15","undefined"],
-        "difficulty": "medium",
-        "answer": "8"
+        "question": "What is the return value of the following function?",
+        "block": "function compare() {\n\tlet num = 2;\n\tlet b = 2;\n\tif(a==b)\n\t\treturn true;\n\telse\n\t\treturn false;\n}",
+        "options": ["false","true","null","undefined"],
+        "difficulty": "easy",
+        "answer": "true"
     },
     {
         "language": "JavaScript",
         "question": "What is the output of the following program?",
-        "block": "const add = (a,b) => {return a + b;} console.log(add(5,3));",
-        "options": ["2","8","15","undefined"],
+        "block": "let c = { greeting: 'Hey!' };\nlet d;\n\nd = c;\nc.greeting = 'Hello';\nconsole.log(d.greeting);",
+        "options": ["Hello","Hey!","ReferenceError","undefined"],
+        "difficulty": "easy",
+        "answer": "Hello"
+    },
+    {
+        "language": "JavaScript",
+        "question": "What is the output of the following program?",
+        "block": "let a = 3;\nlet b = new Number(3);\nlet c = 3;\n\nconsole.log(a == b);\nconsole.log(a === b);\nconsole.log(b === c);",
+        "options": ["true false true","false false true","true false false","false true true"],
+        "difficulty": "medium",
+        "answer": "true false false"
+    },
+    {
+        "language": "JavaScript",
+        "question": "What is the output of the following program?",
+        "block": "function sum(a, b) {\n\treturn a + b;\n}\n\nsum(1, '2');",
+        "options": ["NaN","TypeError","''12''","3"],
+        "difficulty": "medium",
+        "answer": "''12''"
+    },
+    {
+        "language": "JavaScript",
+        "question": "What is the output of the following program?",
+        "block": "let number = 0;\nconsole.log(number++);\nconsole.log(++number);\nconsole.log(number);",
+        "options": ["1 1 2","1 2 2","0 2 2","0 1 2"],
+        "difficulty": "medium",
+        "answer": "0 2 2"
+    },
+    {
+        "language": "JavaScript",
+        "question": "What is the output of the following program?",
+        "block": "function sayHi() {\n\treturn (() => 0)();\n}\n\nconsole.log(typeof sayHi());",
+        "options": ["object","number","function","undefined"],
         "difficulty": "hard",
-        "answer": "8"
+        "answer": "number"
+    },
+    {
+        "language": "JavaScript",
+        "question": "What is the output of the following program?",
+        "block": "!!null;\n!!'';\n!!1;",
+        "options": ["false true false","false false true","false true true","true true false"],
+        "difficulty": "hard",
+        "answer": "false false true"
+    },
+    {
+        "language": "JavaScript",
+        "question": "What is the output of the following program?",
+        "block": "let person = { name: 'Lydia' };\nconst members = [person];\nperson = null;\n\nconsole.log(members);",
+        "options": ["null","[null]","{[]}","[{ name: ''Lydia'' }]"],
+        "difficulty": "hard",
+        "answer": "[{ name: ''Lydia'' }]"
+    },
+    {
+        "language": "Java",
+        "question": "What is the output of the following program?",
+        "block": "class Main {\n\tpublic static void main(String args[]) {\n\t\tSystem.out.println(fun());\n\t}\n\t static int fun() {\n\t\treturn 20;\n\t}\n}",
+        "options": ["Compiler Error","20","0","348fa204h"],
+        "difficulty": "easy",
+        "answer": "20"
+    },
+    {
+        "language": "Java",
+        "question": "What is the output of the following program?",
+        "block": "class Test {\n\tprivate static int x;\n\tpublic static void main(String args[]) {\n\t\tSystem.out.println(fun());\n\t}\n\tstatic int fun() {\n\t\treturn ++x;\n\t}\n}",
+        "options": ["Compiler Error","0","1","-1"],
+        "difficulty": "easy",
+        "answer": "1"
+    },
+    {
+        "language": "Java",
+        "question": "What is the output of the following program?",
+        "block": "class increment {\n\tpublic static void main(String args[])\n\t{\n\t\tint x = 3;\n\t\tSystem.out.print(++x * 8);\n\t}\n}",
+        "options": ["32","33","24","25"],
+        "difficulty": "easy",
+        "answer": "32"
+    },
+    {
+        "language": "Java",
+        "question": "What is the output of the following program?",
+        "block": "class output {\n\tpublic static void main(String args[]) {\n\t\tdouble a, b,c;\n\t\ta = 3.0/0;\n\t\tb = 0/4.0;\n\t\tc = 0/0.0;\n\n\t\tSystem.out.println(a);\n\t\tSystem.out.println(b);\n\t\tSystem.out.println(c);\n\t}\n}",
+        "options": ["Infinity","NaN","0.0","Compiler Error"],
+        "difficulty": "medium",
+        "answer": "NaN"
+    },
+    {
+        "language": "Java",
+        "question": "What is the output of the following program?",
+        "block": "class variable_scope {\n\tpublic static void main(String args[]) {\n\t\tint x;\n\t\tx = 5;\n\t\t{\n\t\t\tint y = 6;\n\t\t\tSystem.out.print(x + '' '' + y);\n\t\t}\n\t\tSystem.out.println(x + '' '' + y);\n\t}\n}",
+        "options": ["Compiler Error","Runtime Error","5 6 5 6","5 6 5"],
+        "difficulty": "medium",
+        "answer": "Compiler Error"
+    },
+    {
+        "language": "Java",
+        "question": "What is the output of the following program?",
+        "block": "class output {\n\tpublic static void main(String args[]) {\n\t\tint arr[] = {1, 2, 3, 4, 5};\n\t\tfor(int i = 0; i < arr.length - 2; ++i)\n\t\t\tSystem.out.println(arr[i] + '' '');\n\t\t}\n}",
+        "options": ["1 2 3 4 5","1 2 3 4","1 2 3","1 2"],
+        "difficulty": "medium",
+        "answer": "1 2 3"
+    },
+    {
+        "language": "Java",
+        "question": "What is the output of the following program?",
+        "block": "class String_demo {\n\tpublic static void main(String args[]) {\n\t\tchar chars[] = {'a', 'b', 'c'};\n\t\tString s = new String(chars);\n\t\tSystem.out.println(s);\n\t}\n}",
+        "options": ["abc","a","b","c"],
+        "difficulty": "hard",
+        "answer": "abc"
+    },
+    {
+        "language": "Java",
+        "question": "What is the output of the following program?",
+        "block": "class output {\n\tpublic static void main(String args[]) {\n\t\tString c = ''Hello i love java'';\n\t\tboolean var;\n\t\tvar = c.startsWith(''hello'');\n\t\tSystem.out.println(var);\n\t}\n}",
+        "options": ["0","true","1","false"],
+        "difficulty": "hard",
+        "answer": "false"
+    },
+    {
+        "language": "Java",
+        "question": "What is the output of the following program?",
+        "block": "import java.util.*;\nclass ArrayList {\n\tpublic static void main(String args[]) {\n\t\tArrayList obj = new ArrayList();\n\t\tobj.add(''A'');\n\t\tobj.add(''B'');\n\t\tobj.add(''C'');\n\t\tobj.add(1, ''D'');\n\t\tSystem.out.println(obj);\n\t}\n}",
+        "options": ["[A,D,C]","[A,B,C]","[A,B,C,D]","[A,D,B,C]"],
+        "difficulty": "hard",
+        "answer": "[A,D,B,C]"
     },
     {
         "language": "Python",
-        "question": "Python Easy 2",
-        "block": "const add = (a,b) => {return a + b;} console.log(add(5,3));",
-        "options": ["2","8","15","undefined"],
+        "question": "What will be the output of the following function?",
+        "block": "len([''hello'',2, 4, 6])",
+        "options": ["Error","6","4","3"],
         "difficulty": "easy",
-        "answer": "8"
+        "answer": "4"
     },
     {
         "language": "Python",
-        "question": "Python Easy 3",
-        "block": "const add = (a,b) => {return a + b;} console.log(add(5,3));",
-        "options": ["2","8","15","undefined"],
+        "question": "What will be the output of the following code?",
+        "block": "x = 'abcd'\nfor i in x:\n\tprint(i.upper())",
+        "options": ["a B C D","a b c d","error","A B C D"],
         "difficulty": "easy",
-        "answer": "8"
+        "answer": "A B C D"
+    },
+    {
+        "language": "Python",
+        "question": "What will be the output of the following function?",
+        "block": "min(max(False,-3,-4), 2,7)",
+        "options": ["-4","-3","2","False"],
+        "difficulty": "easy",
+        "answer": "False"
+    },
+    {
+        "language": "Python",
+        "question": "What will be the output of the following snippet?",
+        "block": "for i in [1, 2, 3, 4][::-1]:\n\tprint (i)",
+        "options": ["4 3 2 1","error","1 2 3 4","1 2 3"],
+        "difficulty": "medium",
+        "answer": "4 3 2 1"
+    },
+    {
+        "language": "Python",
+        "question": "What will be the output of the following program?",
+        "block": "def foo(x):\n\tx[0] = ['def']\n\tx[1] = ['abc']\n\treturn id(x)\nq = ['abc', 'def']\nprint(id(q) == foo(q))",
+        "options": ["error","none","false","true"],
+        "difficulty": "medium",
+        "answer": "true"
+    },
+    {
+        "language": "Python",
+        "question": "What will be the output of the following program?",
+        "block": "i = 0\nwhile i < 5:\n\tprint(i)\n\ti += 1\n\tif i == 3:\n\t\tbreak\nelse:\n\tprint(0)",
+        "options": ["error","0 1 2 0","0 1 2","none"],
+        "difficulty": "medium",
+        "answer": "0 1 2"
+    },
+    {
+        "language": "Python",
+        "question": "What will be the output of the following code?",
+        "block": "x = [[0], [1]]\nprint((' '.join(list(map(str, x))),))",
+        "options": ["01","[0][1]","('01')","('[0][1]',)"],
+        "difficulty": "hard",
+        "answer": "('[0][1]',)"
+    },
+    {
+        "language": "Python",
+        "question": "What will be the output of the following code?",
+        "block": "def foo():\n\ttry:\n\t\treturn 1\n\tfinally:\n\t\treturn 2\nk = foo()\nprint(k)",
+        "options": ["error","3","2","1"],
+        "difficulty": "hard",
+        "answer": "2"
+    },
+    {
+        "language": "Python",
+        "question": "Which function is called when this is executed?",
+        "block": "f = foo()\nformat(f)",
+        "options": ["str()","format()","__str__()","__format__()"],
+        "difficulty": "hard",
+        "answer": "__str__()"
+    },
+    {
+        "language": "C",
+        "question": "What is the output of the following program?",
+        "block": "#include<stdio.h>\n\nmain()\n{\n\tint x = 5;\n\tint y = 6;\n\n\tint z = x * (5 + y);\n\tprintf(''%d'', z);\n}",
+        "options": ["55","11","56","Compile Error"],
+        "difficulty": "easy",
+        "answer": "55"
+    },
+    {
+        "language": "C",
+        "question": "What is the output of the following code snippet?",
+        "block": "#include<stdio.h>\n\nmain()\n{\n\tconst int a = 5;\n\n\ta++;\n\tprintf(''%d'', a);\n}",
+        "options": ["5","6","Runtime Error","Compile Error"],
+        "difficulty": "easy",
+        "answer": "Compile Error"
+    },
+    {
+        "language": "C",
+        "question": "What is the output of the following code snippet?",
+        "block": "#include<stdio.h>\n\nmain()\n{\n\tint x = 0;\n\tfor(int i = 0; i < 10; i++) {\n\t\tx++;\n\t}\n\tprintf(''%d'', x);\n}",
+        "options": ["9","11","10","Runtime Error"],
+        "difficulty": "easy",
+        "answer": "10"
+    },
+    {
+        "language": "C",
+        "question": "What is the output of the following program?",
+        "block": "#include<stdio.h>\n\nmain()\n{\n\tint i = 1;\n\n\twhile(i++<=5);\n\t\tprintf(''%d'',i++);\n}",
+        "options": ["4","6","2 6","2 4"],
+        "difficulty": "medium",
+        "answer": "6"
+    },
+    {
+        "language": "C",
+        "question": "What is the output of the following program?",
+        "block": "#include<stdio.h>\n\nmain()\n{\n\tint a[] = {2,1};\n\n\tprintf(''%d'', *a);\n}",
+        "options": ["0","1","2","Compile Error"],
+        "difficulty": "medium",
+        "answer": "2"
+    },
+    {
+        "language": "C",
+        "question": "What is the output of the following program?",
+        "block": "#include<stdio.h>\n\nmain()\n{\n\tprintf(''%d'', !0<2);\n}",
+        "options": ["0","1","False","True"],
+        "difficulty": "medium",
+        "answer": "1"
+    },
+    {
+        "language": "C",
+        "question": "What is the output of the following program?",
+        "block": "#include<stdio.h>\n\nint main()\n{\n\tint i=0;\n\twhile(+(+i--) != 0)\n\t\ti -= i++;\n\tprintf(''%d'', i);\n\treturn 0;\n}",
+        "options": ["0","1","-1","error"],
+        "difficulty": "hard",
+        "answer": "-1"
+    },
+    {
+        "language": "C",
+        "question": "What is the output of the following program?",
+        "block": "int main()\n{\n\tint a[10];\n\tprintf(''%d'',*a+1-*a+3);\n\treturn 0;\n}",
+        "options": ["0","[]","4","error"],
+        "difficulty": "hard",
+        "answer": "4"
     }
 ]

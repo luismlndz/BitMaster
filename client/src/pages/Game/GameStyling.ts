@@ -85,7 +85,7 @@ export const score = styled.div`
   background-color: #484f58;
   border-radius: 1rem;
   height: 100%;
-  width: 30%;
+  width: 27%;
 `
 
 export const difficulty = styled.div`
@@ -98,7 +98,7 @@ export const difficulty = styled.div`
   background-color: #484f58;
   border-radius: 1rem;
   height: 100%;
-  padding: 0rem 2rem;
+  width: 27%;
 `
 
 export const gameOver = styled.div`
@@ -109,7 +109,7 @@ export const gameOver = styled.div`
   width: 770px;
   height: 510px;
   border-radius: 1rem;
-  // background-image: url('/assets/map.png');
+  background-image: url('/assets/background.gif');
   background-color: #484f58;
   background-position: left top;
   background-size: 100%;
@@ -124,10 +124,10 @@ export const button = styled.div`
   align-items: center;
   justify-content: center;
   font-size: 1rem;
-  color: black;
+  color: white;
   width: 40%;
   height: 50px;
-  background-color: white;
+  background-color: #21262D;
   border: none;
   border-radius: 1rem;
   margin: 1rem;

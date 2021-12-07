@@ -89,6 +89,7 @@ export const Question = ({addScore, difficulty, language, trigger}: props) => {
                                 showLineNumbers={true}
                                 text={question!.block}
                                 theme={dracula}
+                                
                             />
                         </C.block>
                         <C.optionsContainer>
