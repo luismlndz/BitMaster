@@ -3,10 +3,11 @@ import axios from 'axios';
 import React, { useState } from 'react';
 
 type props = {
-    score: number
+    score: number,
+    updateLeaderboard(): void;
 }
 
-export const UploadScore = ({ score }: props) => {
+export const UploadScore = ({ score, updateLeaderboard }: props) => {
     const [submitted, setSubmitted] = useState<boolean>(false);
 
     const handleSubmit = (event: React.SyntheticEvent) => {
@@ -24,6 +25,7 @@ export const UploadScore = ({ score }: props) => {
         axios.post('http://localhost:8080/leaderboard', newEntry)
         .then((response) => {
             console.log(response);
+            updateLeaderboard();
         })
         .catch((err) => {
             console.log(err);
@@ -37,7 +39,7 @@ export const UploadScore = ({ score }: props) => {
             { submitted ?
                 <> 
                     <h1>Submitted!</h1>
-                    <button onClick={() => {window.location.reload()}}>Play Again</button>
+                    <C.button onClick={() => {window.location.reload()}}>Play Again</C.button>
                 </>
                 :
                 <>

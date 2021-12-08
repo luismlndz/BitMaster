@@ -1,21 +1,21 @@
 import styled from "styled-components"
 
 export const container = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-width: 770px;
-height: 510px;
-border-radius: 1rem;
-background-image: url('/assets/background.gif');
-background-color: #484f58;
-background-position: left top;
-background-size: 100%;
-margin: 1rem;
-margin-right: 1.5rem;
-margin-top: -2rem;
-border: 1px solid #21262D;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 770px;
+    height: 510px;
+    border-radius: 1rem;
+    background-image: url('/assets/background.gif');
+    background-color: #484f58;
+    background-position: left top;
+    background-size: 100%;
+    margin: 1rem;
+    margin-right: 1.5rem;
+    margin-top: -2rem;
+    border: 1px solid #21262D;
 `
 
 export const text = styled.div`

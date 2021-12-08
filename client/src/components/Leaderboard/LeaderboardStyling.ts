@@ -5,7 +5,7 @@ export const container = styled.div`
     flex-direction: column;
     width: 30vw;
     height: 80vh;
-    background-color: #484f58;
+    background: url('/assets/leaderboard.gif') no-repeat center;
     border-radius: 1rem;
     border: 1px solid #21262D;
     overflow: hidden;
@@ -61,4 +61,12 @@ export const rowData = styled.div`
     font-size: 1rem;
     width: 50%;
     border-bottom: 1px solid #484f58;
+`
+
+export const trophy = styled.span`
+    height: 6rem;
+    width: 6rem;
+    margin-top: 0.5rem;
+    background: url('/assets/trophy.gif') no-repeat center;
+    background-size: cover;
 `

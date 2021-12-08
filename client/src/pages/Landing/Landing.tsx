@@ -1,13 +1,13 @@
 import * as C from './LandingStyling';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 export default function Landing() {
+    const history = useHistory();
+
     return (
         <C.container>
             <C.hero>
-                <Link style={{textDecoration: 'none', width: '20%'}} to={'/play'}>
-                    <C.button>Get Started</C.button>
-                </Link>
+                <C.button onClick={() => {history.push('/play')}}>Get Started</C.button>
             </C.hero>
             <C.overview>
                 <C.overviewGif/>

@@ -28,7 +28,7 @@ export const Question = ({addScore, difficulty, language, trigger}: props) => {
                 console.log(err);
             });
         }
-    }, [difficulty, trigger]);
+    }, [language, difficulty, trigger]);
 
     const checkAnswer = (option: string) => {
         if(option === question?.answer) {

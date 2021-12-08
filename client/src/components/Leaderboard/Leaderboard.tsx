@@ -1,27 +1,16 @@
 import * as C from './LeaderboardStyling';
-import { useState, useEffect } from 'react';
-import axios from 'axios';
 
-type props = {
-    
+interface props {
+    leaderboard: [{
+        username: string,
+        score: number
+    }]
 }
 
-export const Leaderboard = () => {
-    const [leaderboard, setLeaderboard] = useState<null | [{username: string, score: string}]>(null);
-
-    useEffect(() => {
-        axios.get('http://localhost:8080/leaderboard')
-        .then((response) => {
-            setLeaderboard(response.data);
-        })
-        .catch((err) => {
-            console.log(err);
-        });
-    }, [])
-
+export const Leaderboard = ({ leaderboard }: props) => {
     return (
         <C.container>
-            <C.title>Leaderboard</C.title>
+            <C.title>Leaderboard<C.trophy/></C.title>
             <C.header>
                 <C.headerText>Username</C.headerText>
                 <C.headerText>Score</C.headerText>

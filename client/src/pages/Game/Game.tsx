@@ -7,6 +7,7 @@ import { Leaderboard } from '../../components/Leaderboard/Leaderboard';
 import { UploadScore } from '../../components/UploadScore/UploadScore';
 import { Map } from '../../components/Map/Map';
 import Select, { SingleValue } from 'react-select';
+import axios from 'axios';
 
 export default function Game() {
     const [start, setStart] = useState<boolean>(false);
@@ -15,6 +16,7 @@ export default function Game() {
     const [uploadScore, setUploadScore] = useState<boolean>(false);
     const [difficulty, setDifficulty] = useState<string>('Easy');
     const [language, setLanguage] = useState<string>('JavaScript');
+    const [leaderboard, setLeaderboard] = useState<[{username: string, score: number}]>();
     const character = useCharacter();
 
     const languageOptions = [
@@ -38,6 +40,15 @@ export default function Game() {
                 setDifficulty('Hard');
             }
         }
+        
+        axios.get('http://localhost:8080/leaderboard')
+        .then((response) => {
+            setLeaderboard(response.data);
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+
     }, [score, start]);
 
     const addScore = (arg: Boolean): void => {
@@ -49,6 +60,16 @@ export default function Game() {
                 setOver(true);
             }, 3000);
         }      
+    }
+
+    const updateLeaderboard = () => {
+        axios.get('http://localhost:8080/leaderboard')
+        .then((response) => {
+            setLeaderboard(response.data);
+        })
+        .catch((err) => {
+            console.log(err);
+        });
     }
 
     return (
@@ -80,7 +101,7 @@ export default function Game() {
                                 {uploadScore ? 
                                     <>
                                     {(score > 0) ?
-                                        <UploadScore score={score}/>
+                                        <UploadScore score={score} updateLeaderboard={updateLeaderboard}/>
                                         :
                                         <C.gameOver>
                                             <h1>Score more than 0 to upload your score!</h1>
@@ -103,7 +124,7 @@ export default function Game() {
                 :
                 <>
                     {(over || uploadScore) ?
-                        <Leaderboard/>
+                        <Leaderboard leaderboard={leaderboard!}/>
                         :             
                         <HowToPlay/>
                     }
