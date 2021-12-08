@@ -18,7 +18,7 @@ getLeaderboard = () => {
 //Invoke
 getLeaderboard();
 
-//Retrive data for leaderboard
+//Retrive data for sorted leaderboard
 router.get('/', (_req, res) => {
     leaderboardData.sort((x, y) => {
        return y.score - x.score;

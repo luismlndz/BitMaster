@@ -30,9 +30,9 @@ router.get('/JavaScript/easy', (_req, res) => {
     })
     const random = Math.floor(Math.random() * easy.length);
     const randomQuestion = easy[random];
-    questionsData = questionsData.filter((question) => {
-        return question !== randomQuestion
-    })
+    // questionsData = questionsData.filter((question) => {
+    //     return question !== randomQuestion
+    // })
     res.json(randomQuestion);
 })
 
@@ -43,9 +43,9 @@ router.get('/JavaScript/medium', (_req, res) => {
     })
     const random = Math.floor(Math.random() * medium.length);
     const randomQuestion = medium[random];
-    questionsData = questionsData.filter((question) => {
-        return question !== randomQuestion
-    })
+    // questionsData = questionsData.filter((question) => {
+    //     return question !== randomQuestion
+    // })
     res.json(randomQuestion);
 })
 
@@ -65,9 +65,9 @@ router.get('/Java/easy', (_req, res) => {
     })
     const random = Math.floor(Math.random() * easy.length);
     const randomQuestion = easy[random];
-    questionsData = questionsData.filter((question) => {
-        return question !== randomQuestion
-    })
+    // questionsData = questionsData.filter((question) => {
+    //     return question !== randomQuestion
+    // })
     res.json(randomQuestion);
 })
 
@@ -78,9 +78,9 @@ router.get('/Java/medium', (_req, res) => {
     })
     const random = Math.floor(Math.random() * medium.length);
     const randomQuestion = medium[random];
-    questionsData = questionsData.filter((question) => {
-        return question !== randomQuestion
-    })
+    // questionsData = questionsData.filter((question) => {
+    //     return question !== randomQuestion
+    // })
     res.json(randomQuestion);
 })
 
@@ -100,9 +100,9 @@ router.get('/Python/easy', (_req, res) => {
     })
     const random = Math.floor(Math.random() * easy.length);
     const randomQuestion = easy[random];
-    questionsData = questionsData.filter((question) => {
-        return question !== randomQuestion
-    })
+    // questionsData = questionsData.filter((question) => {
+    //     return question !== randomQuestion
+    // })
     res.json(randomQuestion);
 })
 
@@ -113,9 +113,9 @@ router.get('/Python/medium', (_req, res) => {
     })
     const random = Math.floor(Math.random() * medium.length);
     const randomQuestion = medium[random];
-    questionsData = questionsData.filter((question) => {
-        return question !== randomQuestion
-    })
+    // questionsData = questionsData.filter((question) => {
+    //     return question !== randomQuestion
+    // })
     res.json(randomQuestion);
 })
 
@@ -135,9 +135,9 @@ router.get('/C/easy', (_req, res) => {
     })
     const random = Math.floor(Math.random() * easy.length);
     const randomQuestion = easy[random];
-    questionsData = questionsData.filter((question) => {
-        return question !== randomQuestion
-    })
+    // questionsData = questionsData.filter((question) => {
+    //     return question !== randomQuestion
+    // })
     res.json(randomQuestion);
 })
 
@@ -148,9 +148,9 @@ router.get('/C/medium', (_req, res) => {
     })
     const random = Math.floor(Math.random() * medium.length);
     const randomQuestion = medium[random];
-    questionsData = questionsData.filter((question) => {
-        return question !== randomQuestion
-    })
+    // questionsData = questionsData.filter((question) => {
+    //     return question !== randomQuestion
+    // })
     res.json(randomQuestion);
 })
 
