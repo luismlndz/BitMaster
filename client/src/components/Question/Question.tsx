@@ -19,7 +19,7 @@ export const Question = ({addScore, difficulty, language, trigger}: props) => {
 
     useEffect(() => {
         if(trigger) {
-            axios.get(`http://localhost:8080/questions/${language}/${difficulty}`)
+            axios.get(`http://localhost:8080/questions/${language}/${difficulty.toLowerCase()}`)
             .then((response) => {
                 setQuestion(response.data);
                 setLoading(false);
